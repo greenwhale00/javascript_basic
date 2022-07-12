@@ -38,7 +38,46 @@
         );
 
         let _this = this;
-        console.log(this)
+        console.log(_this, typeof (_this), _this.document);
+
+        let TA = 0;
+        let TB = ' ';  //공백은 true
+        let TC = false;
+        let TD = !false;
+        let TE = null;
+        let TF = undefined;
+
+        //참스러운 값과 거짓스러운 값...
+
+        console.log(
+            Boolean(TA),
+            Boolean(TB),
+            Boolean(TC),
+            Boolean(TD),
+            Boolean(TE),
+            Boolean(TF),
+        );
+
+
+        const 객체 = {
+            name: '김혜림',
+            age: 34,
+            work: function () {
+                console.log('student')
+            }
+        }
+
+        console.log(객체.name, 객체['name'])
+
+        const 배열 = [1, 2, 3, 4, 5]
+
+        console.log(배열[0])
+
+        const 함수 = function () {
+            return '나는 함수';
+        }
+
+        console.log(함수());
 
 
     </script>
