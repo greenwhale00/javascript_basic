@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 05</title>
+</head>
+
+<body>
+
+    <ul id="UL"></ul>
+
+
+    <script>
+
+        const DATA = [
+            { id: 1, content: "나는 메로나다.", date: "2022년 07월 21일" },
+            { id: 2, content: "나는 요맘떼다.", date: "2022년 07월 21일" },
+            { id: 3, content: "나는 와다.", date: "2022년 07월 21일" },
+            { id: 4, content: "나는 부라보콘이다.", date: "2022년 07월 21일" },
+            { id: 5, content: "나는 생귤탱귤이다.", date: "2022년 07월 21일" },
+        ]
+
+        //join() 아직 중요하지 않다. 배열을 문자열로 합치는 합수다.
+        const RESULT = DATA.map(data => `<li>${data.content}</li>`).slice(0, 2).join(``);
+        console.log(RESULT);
+        document.querySelector('#UL').innerHTML = RESULT;
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
