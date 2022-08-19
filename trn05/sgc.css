@@ -1,0 +1,496 @@
+body {
+    letter-spacing: -0.025em;
+}
+
+.container {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.txt {display: flex; flex-direction: column; justify-content: center;}
+.txt strong {display: block; margin: 0 0 20px 0; font-size: 18px; font-weight: 100;}
+.txt h2 {margin: 0 0 20px 0; font-size: 65px; font-weight: 900; }
+.txt p {margin: 0 0 40px 0; font-size: 15px; line-height: 1.45; }
+.txt a {display: inline-block; background: #333; color: #fff; padding: 10px 20px; align-self: flex-start;}
+
+
+.iconHr {
+    position: relative;
+    margin: 30px auto;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    width: 1600px;
+    overflow: visible;
+}
+
+.iconHr::after {
+    content: "\e905";
+    font-family: xeicon;
+    position: absolute;
+    font-size: 20px;
+    padding: 10px;
+    background: #f7f7f7;
+    border-radius: 50%;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    line-height: 100px;
+    z-index: 999;
+    transition: top 0.5s;
+}
+
+.Header.on {
+    top: -100px;
+}
+
+.Header .Gnb ul {
+    display: flex;
+    gap: 40px;
+    font-size: 18px;
+}
+
+.mainVisual {
+    background: url(./assets/images/main.png) no-repeat fixed center center/cover;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+}
+
+.mainVisual strong {
+    display: block;
+    margin: 0 0 30px 0;
+    font-size: 25px;
+    font-weight: 500;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.mainVisual h2 {
+    margin: 0 0 30px 0;
+    font-size: 75px;
+    font-weight: 900;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.mainVisual p {
+    font-size: 15px;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+
+.mainVisual.on strong {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
+
+.mainVisual.on h2 {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 1s;
+}
+
+.mainVisual.on p {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 1.5s;
+}
+
+.mainVisual .wheel {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 60px;
+    border: 3px solid rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    font-size: 0;
+}
+
+.mainVisual .wheel::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.75);
+    animation: wheel 0.5s infinite;
+}
+
+@keyframes wheel {
+    to {
+        top: 15px;
+    }
+}
+
+.productSlider {
+    text-align: center;
+}
+
+.productSlider .slideMenu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    line-height: 50px;
+    font-size: 0;
+}
+
+.productSlider .slideMenu img {
+    height: 15px;
+    vertical-align: top;
+}
+
+.productSlider .slideMenu li {position: relative;}
+.productSlider .slideMenu li::after { content: ""; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: 0; height: 3px; background: #f00;}
+
+.productSlider .slideMenu li.on::after { width: 100%; transition: 0.5s;}
+
+
+.productSlider h2 {
+    font-size: 40px;
+    font-weight: 100;
+    margin: 0 0 30px 0;
+}
+
+.productSlider p {
+    margin: 0 0 30px 0;
+}
+
+.productSlider .container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.productSlider .container>div {
+    float: left;
+    width: 50%;
+    overflow: hidden;
+}
+
+.productSlider .container .left {
+    height: 500px;
+    background: #f00;
+}
+
+.productSlider .container .top {
+    height: 250px;
+    background: #ff0;
+}
+
+.productSlider .container .bottom {
+    height: 250px;
+    background: #369;
+}
+
+
+.productSlider .basicSlider figure {
+    position: relative;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+}
+
+
+.productSlider .basicSlider .sl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    width: 100%;
+}
+
+.productSlider .basicSlider .sl h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.productSlider .left_slider figure {
+    height: 500px;
+}
+
+
+.productSlider .left .itm01 {
+    background-image: url(./assets/images/story101.png);
+}
+
+.productSlider .left .itm02 {
+    background-image: url(./assets/images/story201.png);
+}
+
+.productSlider .left .itm03 {
+    background-image: url(./assets/images/story301.png);
+}
+
+.productSlider .left .itm04 {
+    background-image: url(./assets/images/story401.png);
+}
+
+
+.productSlider .top .itm01 {
+    background-image: url(./assets/images/story102.png);
+}
+
+.productSlider .top  .itm02 {
+    background-image: url(./assets/images/story202.png);
+}
+
+.productSlider .top  .itm03 {
+    background-image: url(./assets/images/story302.png);
+}
+
+.productSlider .top  .itm04 {
+    background-image: url(./assets/images/story402.png);
+}
+
+
+.productSlider .bottom .itm01 {
+    background-image: url(./assets/images/story103.png);
+}
+
+.productSlider .bottom .itm02 {
+    background-image: url(./assets/images/story203.png);
+}
+
+.productSlider .bottom .itm03 {
+    background-image: url(./assets/images/story303.png);
+}
+
+.productSlider .bottom .itm04 {
+    background-image: url(./assets/images/story403.png);
+}
+
+
+.Basic .container { display: flex; gap: 100px; overflow: hidden; }
+.Basic .container>div {flex: 1;}
+
+.Basic .left {transform: translate(0, 200px); opacity: 0;}
+.Basic.on .left {transform: translate(0,0); opacity: 1; transition: 0.5s 0.5s; }
+
+.Basic .right {transform: translate(0, 200px); opacity: 0;}
+.Basic.on .right {transform: translate(0,0); opacity: 1; transition: 0.5s 1s; }
+
+
+.Story {background: #f5f2ed url(./assets/images/main_ourbg.png) no-repeat right bottom ;}
+
+.People {background: url(./assets/images/DM_20220819091829_031.png);}
+.People .container .right {order: -1;}
+
+
+.Sns {background: #f2f2f2;}
+
+.Sns img {width: 100%;}
+
+
+.Sns .container::after {content: ""; display: block; clear: both;}
+.Sns .container>* { position: relative; float: left; width: 20%;  overflow: hidden;}
+.Sns .container .tit {font-size: 50px; font-weight: 900; line-height: 1.2;}
+.Sns .container .tit span {display: block;}
+.Sns .container figure:hover .link {top: 0;}
+.Sns .container .box { height: 318px; overflow: hidden; }
+
+.Sns .container .link {position: absolute; top: 100%; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); color: #fff; font-size: 30px; display: flex; align-items: center; justify-content: center; transition: 0.5s; }
+
+.Sns .container .link i {margin: 0 5px;}
+
+
+.Footer {padding: 0 0 50px 0;}
+.Footer .top { line-height: 100px; border-bottom: 1px solid #ddd; margin: 0 0 30px 0;}
+.Footer .top ul {display: flex; justify-content: center; font-size: 20px; font-weight: 400;}
+.Footer .top ul li~li::before {content: ""; display: inline-block; width: 1px; height: 16px; background: #ddd; margin: 0 15px;}
+.Footer a {display: inline-block;}
+
+
+
+.Footer .bottom ul {display: flex; justify-content: center; font-size: 13px; line-height: 37px; }
+
+.Footer .bottom ul li~li::before {content: ""; display: inline-block; width: 1px; height: 10px; background: #ddd; margin: 0 10px;}
+
+.Footer address {text-align: center; font-size: 11px; margin-top: 20px;}
+
+
+
+
+
+.navBar {
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+.navBar li {
+    width: 50px;
+}
+
+.navBar li a {
+    position: relative;
+    display: block;
+    font-size: 0;
+    height: 15px;
+}
+
+
+.navBar li a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 30%;
+    height: 1px;
+    background: #333;
+    transition: 0.5s;
+}
+
+.navBar li.on a::after {
+    width: 100%;
+}
+
+.this_page {
+    position: absolute;
+    right: 0;
+    top: -100px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.allOpen {
+    position: relative;
+    display: block;
+    font-size: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+}
+
+.allOpen button {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.allOpen::before,
+.allOpen::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    height: 4px;
+    background: #fff;
+}
+
+.allOpen::before {
+    top: 7px;
+}
+
+.allOpen::after {
+    bottom: 7px;
+}
+
+.allOpen button::before,
+.allOpen button::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    height: 4px;
+    background: #fff;
+    top: calc(50% - 2px);
+}
+
+.allOpen.on::before,
+.allOpen.on::after {
+    opacity: 0;
+}
+
+.allOpen.on button::before {
+    transform: rotate(45deg);
+}
+
+.allOpen.on button::after {
+    transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navBar {
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+.navBar li {
+    width: 50px;
+}
+
+.navBar li a {
+    position: relative;
+    display: block;
+    font-size: 0;
+    height: 15px;
+}
+
+
+.navBar li a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 30%;
+    height: 1px;
+    background: #333;
+    transition: 0.5s;
+}
+
+.navBar li.on a::after {
+    width: 100%;
+}
+
+
+.cover {position: fixed; top: 0; left: 0; right: 0; height: 100vh; background: rgba(0, 0, 0, 0.95); display: flex; justify-content: center; align-items: center;}
+
+.cover ul {display: flex; gap: 40px; font-size: 40px; font-weight: 700; color: #fff;}
+.cover ul li { position: relative; text-align: center; }
+.cover ul li::after {
+    content: ""; display: inline-block; width: 0; height: 3px; background: #f00; transition: 0.5s; 
+}
+
+.cover ul li:hover::after {width: 100%;}
